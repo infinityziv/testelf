@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Treasure Hunt</h1>
+        <div id="balance">Balance: 0 LOX</div>
+        <div id="level">Level: 1 / Max Level: 4</div>
+        <div class="chests">
+            <div class="chest" data-id="1"></div>
+            <div class="chest" data-id="2"></div>
+            <div class="chest" data-id="3"></div>
+            <div class="chest" data-id="4"></div>
+            <div class="chest" data-id="5"></div>
+            <div class="chest" data-id="6"></div>
+            <div class="chest" data-id="7"></div>
+            <div class="chest" data-id="8"></div>
+            <div class="chest" data-id="9"></div>
+        </div>
+        <div id="timer" class="hidden">Next chest available in: <span id="time-remaining"></span></div>
+        <button id="upgrade-timer">Upgrade Timer</button>
+        <button id="upgrade-reward">Upgrade Reward</button>
+    </div>
+    
+    <!-- Модальное окно -->
+    <div id="upgrade-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Upgrade Timer</h2>
+            <ul>
+                <li>Уровень 1 - цена 10000 LOX, уменьшение времени до 3 часов</li>
+                <li>Уровень 2 - цена 40000 LOX, уменьшение времени до 2 часов</li>
+                <li>Уровень 3 - цена 100000 LOX, уменьшение времени до 1 часа</li>
+                <li>Уровень 4 - цена 500000 LOX, уменьшение времени до 30 минут</li>
+            </ul>
+            <button id="upgrade-level-1">Купить Уровень 1</button>
+            <button id="upgrade-level-2">Купить Уровень 2</button>
+            <button id="upgrade-level-3">Купить Уровень 3</button>
+            <button id="upgrade-level-4">Купить Уровень 4</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для апгрейда выпадения монет -->
+    <div id="upgrade-modal-reward" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-reward-button">&times;</span>
+            <h2>Upgrade Reward</h2>
+            <ul>
+                <li>Уровень 1 - цена 10000 LOX, выпадение от 100 до 1000 монет</li>
+                <li>Уровень 2 - цена 20000 LOX, выпадение от 200 до 2000 монет</li>
+                <li>Уровень 3 - цена 50000 LOX, выпадение от 300 до 3000 монет</li>
+                <li>Уровень 4 - цена 100000 LOX, выпадение от 500 до 5000 монет</li>
+            </ul>
+            <button id="upgrade-reward-level-1">Купить Уровень 1</button>
+            <button id="upgrade-reward-level-2">Купить Уровень 2</button>
+            <button id="upgrade-reward-level-3">Купить Уровень 3</button>
+            <button id="upgrade-reward-level-4">Купить Уровень 4</button>
+        </div>
+    </div>
+
+    <div id="notification" class="notification hidden">
+        <span class="close-notification">&times;</span>
+        <p id="notification-message"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
